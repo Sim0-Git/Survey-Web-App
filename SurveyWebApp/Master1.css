@@ -1,0 +1,114 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-image: url(Images//login_background_2.jpg);
+    background-color: hsla(0,0%,100%,0.80);
+    background-blend-mode: overlay;
+}
+.form1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0 186 253);
+    padding: 10px;
+}
+
+.LogoImage {
+    max-width: 25px;
+    margin-right: 15px;
+    margin-left: 50px;
+}
+
+.Logo_lbl {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.Exit_btn {
+    margin-right: 50px;
+    width: 100px;
+    height: 28px;
+    background-color: rgb(255 202 100);
+    color: white;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 1px 1px 4px #999;
+    font-size: 18px;
+    font-weight: bold;
+}
+.Title_1_lbl {
+    display: flex;
+    align-self: center;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(95 95 105);
+    margin-top: 40px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50vh;
+}
+.question_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0 0 0 / 0.8);
+    width: 550px;
+    min-height: 120px;
+    padding: 20px 10px 20px 10px;
+    border-radius: 6px;
+    padding: 10px;
+}
+.question_label {
+    color: rgb(59 157 255);
+    font-size: 20px;
+}
+.btn_container{
+    display:flex;
+    justify-content:center;
+}
+.next_btn2 {
+    background-color: rgb(59 157 255);
+    border-radius: 4px;
+    border: none;
+    box-shadow: 1px 1px 4px #999;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    width: 300px;
+    height: 30px;
+}
+.footer_container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0 186 253);
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+.copyright_lbl{
+    font-size:14px;
+    font-weight:bold;
+    padding:10px;
+}
+
+.checkBoxList {
+    /*color: rgb(59 157 255);*/
+    color: white;
+    margin-left: 20px;
+}
+.email_txtbox {
+    margin-left: 5px;
+    margin-right:5px;
+    min-width: 230px;
+}
