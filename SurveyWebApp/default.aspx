@@ -12,7 +12,7 @@
             <asp:Label ID="Users" runat="server" Text="Unregistered Users" Font-Bold="True" Font-Names="Arial" Font-Size="Large" ForeColor="#006699"></asp:Label>
             <br />
             <br />
-            <asp:GridView ID="GridView1" runat="server" BorderColor="#0033CC" BorderStyle="Double" CellPadding="5" CellSpacing="5">
+            <asp:GridView ID="GridView1" runat="server" BorderColor="#0033CC" BorderStyle="Double" CellPadding="5" CellSpacing="5" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             </asp:GridView>
             <br />
             <asp:Label ID="Staff" runat="server" Text="Staff" Font-Bold="True" Font-Names="Arial" Font-Size="Large" ForeColor="#006699"></asp:Label>

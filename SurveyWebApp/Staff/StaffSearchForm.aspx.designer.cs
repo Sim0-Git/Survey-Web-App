@@ -15,15 +15,6 @@ namespace SurveyWebApp
     {
 
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -42,13 +33,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// TextBox1 control.
+        /// first_name_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox first_name_txt;
 
         /// <summary>
         /// Button3 control.
@@ -69,13 +60,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// TextBox2 control.
+        /// second_name_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox second_name_txt;
 
         /// <summary>
         /// Button4 control.
@@ -96,13 +87,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// TextBox3 control.
+        /// gender_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.DropDownList gender_list;
 
         /// <summary>
         /// Button7 control.
@@ -123,13 +114,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// TextBox4 control.
+        /// age_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.DropDownList age_list;
 
         /// <summary>
         /// Button8 control.
@@ -150,13 +141,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// TextBox5 control.
+        /// state_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.DropDownList state_list;
 
         /// <summary>
         /// Button9 control.
@@ -177,13 +168,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
-        /// TextBox6 control.
+        /// suburb_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox suburb_txt;
 
         /// <summary>
         /// Button10 control.
@@ -204,13 +195,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label9;
 
         /// <summary>
-        /// TextBox7 control.
+        /// post_code_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox post_code_txt;
 
         /// <summary>
         /// Button5 control.
@@ -231,13 +222,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label10;
 
         /// <summary>
-        /// TextBox8 control.
+        /// email_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox email_txt;
 
         /// <summary>
         /// Button6 control.
@@ -258,13 +249,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label11;
 
         /// <summary>
-        /// TextBox9 control.
+        /// bank_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.DropDownList bank_list;
 
         /// <summary>
         /// Button11 control.
@@ -285,13 +276,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label12;
 
         /// <summary>
-        /// TextBox10 control.
+        /// service_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.DropDownList service_list;
 
         /// <summary>
         /// Button12 control.
@@ -312,13 +303,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label13;
 
         /// <summary>
-        /// TextBox11 control.
+        /// newspaper_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.DropDownList newspaper_list;
 
         /// <summary>
         /// Button13 control.
@@ -339,13 +330,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label14;
 
         /// <summary>
-        /// TextBox12 control.
+        /// interest_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.DropDownList interest_list;
 
         /// <summary>
         /// Button14 control.
@@ -366,13 +357,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label15;
 
         /// <summary>
-        /// TextBox13 control.
+        /// travel_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.DropDownList travel_list;
 
         /// <summary>
         /// Button15 control.
@@ -393,13 +384,13 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label16;
 
         /// <summary>
-        /// TextBox14 control.
+        /// sport_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox14;
+        protected global::System.Web.UI.WebControls.DropDownList sport_list;
 
         /// <summary>
         /// Button16 control.
@@ -429,6 +420,15 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
+        /// Result_lbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Result_lbl;
+
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -438,12 +438,12 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// GridView1 control.
+        /// staff_search_grid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView staff_search_grid;
     }
 }

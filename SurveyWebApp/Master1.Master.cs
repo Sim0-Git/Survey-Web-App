@@ -20,7 +20,7 @@ namespace SurveyWebApp
             Response.Redirect("Respondent/RespondentRegisterForm.aspx");
         }
 
-        protected void Exit_btn_Click(object sender, EventArgs e)
+        public void Exit_btn_Click(object sender, EventArgs e)
         {
             Response.Redirect("Home.aspx");
         }

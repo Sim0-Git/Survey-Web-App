@@ -11,10 +11,35 @@ namespace SurveyWebApp
 {
     public partial class RespondentRegisterForm : System.Web.UI.Page
     {
+        ResultStatus rs = new ResultStatus();
         protected void Page_Load(object sender, EventArgs e)
         {
             var userEmail = Session["user_email"] as String;
             email_txtbox.Text = userEmail;
+
+            if (!IsPostBack)
+            {
+                //Label5.Text = "page is the same";
+                newEmail_txtbox.Enabled = false;
+                RequiredFieldValidator_newEmail.Enabled = false;
+                newEmail_txtbox.Style["visibility"] = "hidden";
+                email_txtbox.Style["visibility"] = "visible";
+                
+            }
+            else
+            {
+                //Label5.Text = "page has been reloaded";
+                email_txtbox.Enabled = false;
+                RequiredFieldValidator_email.Enabled = false;
+                RequiredFieldValidator_newEmail.Enabled = true;
+                newEmail_txtbox.Enabled = true;
+                newEmail_txtbox.Style["visibility"] = "visible";
+                email_txtbox.Style["visibility"] = "hidden";
+
+            }
+            
+
+            
         }
 
         protected void calendar_btn_Click(object sender, EventArgs e)
@@ -65,17 +90,19 @@ namespace SurveyWebApp
             return respondent_registration_id;
             
         }
-        private ResultStatus RegisterRespondent(String strinEmail,String stringName, String stringSurname, String stringPhone, String stringDob)
+        private ResultStatus RegisterRespondent(String stringEmail,String stringName, String stringSurname, String stringPhone, String stringDob)
         {
-            ResultStatus rs = new ResultStatus();
+            //ResultStatus rs = new ResultStatus();
 
-            int respondent_registration_id = GetRespondentRegistrationID(strinEmail);
+            int respondent_registration_id = GetRespondentRegistrationID(stringEmail);
             if(respondent_registration_id != -1)
             {
                 Session["respondent_reg_id"] = respondent_registration_id;
 
                 rs.ResultStatuscode = 2;
                 rs.Message = "Email already in use, choose another one";
+                email_txtbox.Text = "";
+
             }
             else
             {
@@ -98,17 +125,17 @@ namespace SurveyWebApp
                 command.Parameters.AddWithValue("@surname", stringSurname);
                 command.Parameters.AddWithValue("@phone", stringPhone);
                 command.Parameters.AddWithValue("@dob", dateTime);
-                command.Parameters.AddWithValue("@email", strinEmail);
+                command.Parameters.AddWithValue("@email", stringEmail);
 
                 int result = command.ExecuteNonQuery();
-                if(result < 0)
+                if(result < 0) 
                 {
                     rs.ResultStatuscode = 3;
                     rs.Message = "Error in registration";
                 }
                 else
                 {
-                    respondent_registration_id = GetRespondentRegistrationID(strinEmail);
+                    respondent_registration_id = GetRespondentRegistrationID(stringEmail);
                     Session["respondent_reg_id"] = respondent_registration_id;
                     rs.ResultStatuscode = 1;
                     rs.Message = "Registration succesful";
@@ -124,8 +151,19 @@ namespace SurveyWebApp
             String stringPhone = phone_txtbox.Text;
             String stringDob = dob_txtbox.Text;
             String stringEmail = email_txtbox.Text;
+            String stringNewEmail = newEmail_txtbox.Text;
 
-            ResultStatus rs = RegisterRespondent(stringEmail,stringName, stringSurname, stringPhone, stringDob);
+            if (email_txtbox.Enabled == false)
+            {
+                rs = RegisterRespondent(stringNewEmail, stringName, stringSurname, stringPhone, stringDob);
+            }
+            else
+            {
+                rs = RegisterRespondent(stringEmail, stringName, stringSurname, stringPhone, stringDob);
+                //ResultStatus rs = RegisterRespondent(stringEmail, stringName, stringSurname, stringPhone, stringDob);
+            }
+            
+            
             Label5.Text = rs.Message;
 
         }

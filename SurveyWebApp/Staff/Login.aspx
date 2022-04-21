@@ -16,7 +16,7 @@
             <asp:TextBox runat="server" placeholder="Enter email" class="text_box" TextMode="Email"/>
             <asp:Label Text="Password" runat="server" CssClass="label_txt" />
             <asp:TextBox runat="server" placeholder="Enter password" class="text_box" TextMode="Password"/>
-            <asp:Button ID="Button1" runat="server" CssClass="login_btn" Text="Sign in" />
+            <asp:Button ID="Button1" runat="server" CssClass="login_btn" Text="Sign in" OnClick="Button1_Click" />
         </form>   
     </div>
 </body>

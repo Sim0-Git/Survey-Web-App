@@ -15,17 +15,17 @@ namespace SurveyWebApp
 
             //Assume I have 5 questions to be displayed
             if(!IsPostBack)//For the first time
-                question_lbl.Text = "This is question number: " + AppSession.geQuestionNumber();
+                question_lbl.Text = "This is question number: " + AppSession.getQuestionNumber();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if ((int)AppSession.geQuestionNumber() < 5)
+            if ((int)AppSession.getQuestionNumber() < 5)
             {
-                AppSession.seQuestionNumber(AppSession.geQuestionNumber() + 1);
+                AppSession.setQuestionNumber(AppSession.getQuestionNumber() + 1);
             }
             
-            question_lbl.Text = "This is question number: " + AppSession.geQuestionNumber();
+            question_lbl.Text = "This is question number: " + AppSession.getQuestionNumber();
         }
     }
 }

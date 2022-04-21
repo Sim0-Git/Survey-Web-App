@@ -7,16 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace SurveyWebApp
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Master2 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Exit_btn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("StaffSearchFormMaster.aspx");
+            Response.Redirect("../Home.aspx");
         }
     }
 }

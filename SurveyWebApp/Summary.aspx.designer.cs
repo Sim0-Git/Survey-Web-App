@@ -11,43 +11,43 @@ namespace SurveyWebApp
 {
 
 
-    public partial class HomeMaster
+    public partial class Summary
     {
 
         /// <summary>
-        /// question_label control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label question_label;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// placeHolder control.
+        /// age_lbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder placeHolder;
+        protected global::System.Web.UI.WebControls.Label age_lbl;
 
         /// <summary>
-        /// option_selected_lbl control.
+        /// ssdsd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_selected_lbl;
+        protected global::System.Web.UI.WebControls.Label ssdsd;
 
         /// <summary>
-        /// next_btn2 control.
+        /// sdsd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button next_btn2;
+        protected global::System.Web.UI.WebControls.Label sdsd;
     }
 }

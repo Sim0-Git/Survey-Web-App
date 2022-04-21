@@ -1,10 +1,11 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="SurveyWebApp.Master1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master2.master.cs" Inherits="SurveyWebApp.Master2" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
     <title></title>
+    <link href="StaffSearchForm.css" rel="stylesheet" />
     <link href="Master1.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -20,19 +21,10 @@
                 <asp:Button ID="Exit_btn" runat="server" Text="Exit  >" CssClass="Exit_btn" OnClick="Exit_btn_Click" CausesValidation="False" />
             </div>
         </div>
-        <div style="display: flex; justify-content: center;">
-            <asp:Label ID="Title_1_lbl" runat="server" Text="Please answer the questions<br/>and click &quot;next&quot; in order to<br/>complete the survey" CssClass="Title_1_lbl"></asp:Label>
-        </div>
         <div class="main_container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <%--<div class="btn_container">
-            <asp:Button ID="next_btn2" Text="Next  >" runat="server" CssClass="next_btn2" OnClick="next_btn2_Click" />
-        </div> --%>
     </form>
-    <div class="footer_container">
-        <asp:Label ID="copyright_lbl" runat="server" Text="Copyright @Market Survey 2022" CssClass="copyright_lbl"></asp:Label>
-    </div>
 </body>
 </html>

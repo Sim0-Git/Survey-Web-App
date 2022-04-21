@@ -75,6 +75,7 @@
     <Content Include="Images\login_background.jpg" />
     <Content Include="Images\login_background_2.jpg" />
     <Content Include="Images\rocket_login.png" />
+    <Content Include="Master2.css" />
     <Content Include="Staff\Login.aspx" />
     <Content Include="Main1.aspx" />
     <Content Include="Master1.css" />
@@ -85,6 +86,7 @@
     <Content Include="Staff\StaffSearchForm.aspx" />
     <Content Include="Staff\StaffSearchForm.css" />
     <Content Include="Staff\Login.css" />
+    <Content Include="Summary.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +112,13 @@
     </Compile>
     <Compile Include="HomeMaster.aspx.designer.cs">
       <DependentUpon>HomeMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master2.Master.cs">
+      <DependentUpon>Master2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master2.Master.designer.cs">
+      <DependentUpon>Master2.Master</DependentUpon>
     </Compile>
     <Compile Include="ResultStatus.cs" />
     <Compile Include="Staff\Login.aspx.cs">
@@ -162,9 +171,17 @@
     <Compile Include="Staff\StaffSearchForm.aspx.designer.cs">
       <DependentUpon>StaffSearchForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Summary.aspx.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Summary.aspx.designer.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master1.Master" />
+    <Content Include="Master2.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

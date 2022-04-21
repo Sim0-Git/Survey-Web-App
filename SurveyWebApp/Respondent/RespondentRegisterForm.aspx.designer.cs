@@ -87,6 +87,15 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.TextBox email_txtbox;
 
         /// <summary>
+        /// newEmail_txtbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox newEmail_txtbox;
+
+        /// <summary>
         /// RequiredFieldValidator_email control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace SurveyWebApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_email;
+
+        /// <summary>
+        /// RequiredFieldValidator_newEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_newEmail;
 
         /// <summary>
         /// name_lb control.

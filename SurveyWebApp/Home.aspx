@@ -19,6 +19,7 @@
                 <asp:Button ID="Exit_btn" runat="server" Text="Staff Login  >" CssClass="Exit_btn" OnClick="Exit_btn_Click" />
             </div>
         </div>
+            
         <div class="container">
             <asp:Label ID="Label1" runat="server" Text="Welcome to the survey page" CssClass="label1"></asp:Label>
             <asp:Label ID="Label2" runat="server" Text="In order to complete the survey you will be asked some questions,<br/>please take your time to answer." CssClass="label2"></asp:Label>

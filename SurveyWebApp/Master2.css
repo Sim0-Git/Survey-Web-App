@@ -1,0 +1,8 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-image: url(Images//login_background_2.jpg);
+    background-color: hsla(0,0%,100%,0.80);
+    background-blend-mode: overlay;
+}
+

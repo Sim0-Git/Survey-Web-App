@@ -6,6 +6,11 @@
 <head runat="server">
     <title></title>
     <link href="RespondentRegister.css" rel="stylesheet" />
+    <script>
+        $("#submit_btn").click(function () {
+            $("#email_txtbox").hide();
+        })
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,7 +26,9 @@
                 <div class="form_container">
                     <asp:Label ID="email_lbl" runat="server" Text="Email" CssClass="form_lbl"></asp:Label>
                     <asp:TextBox ID="email_txtbox" runat="server" placeholder="Email" CssClass="form_txt"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator_email" runat="server" ErrorMessage="Email cannot be empty" ForeColor="#FF0066" ControlToValidate="name_txtbox" Font-Size="10pt"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="newEmail_txtbox" runat="server"  placeholder="Email" CssClass="newEmail_txtbox"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator_email" runat="server" ErrorMessage="Email cannot be empty" ForeColor="#FF0066" ControlToValidate="email_txtbox" Font-Size="10pt"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator_newEmail" runat="server" ErrorMessage="Email cannot be empty" ForeColor="#FF0066" ControlToValidate="newEmail_txtbox" Font-Size="10pt"></asp:RequiredFieldValidator>
                     <asp:Label ID="name_lb" runat="server" Text="First name" CssClass="form_lbl"></asp:Label>
                     <asp:TextBox ID="name_txtbox" runat="server" placeholder="Name" CssClass="form_txt"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator_name" runat="server" ErrorMessage="Name cannot be empty" ForeColor="#FF0066" ControlToValidate="name_txtbox" Font-Size="10pt"></asp:RequiredFieldValidator>
