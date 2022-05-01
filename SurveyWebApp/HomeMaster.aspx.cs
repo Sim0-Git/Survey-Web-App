@@ -12,59 +12,47 @@ namespace SurveyWebApp
 {
     public partial class HomeMaster : System.Web.UI.Page
     {
+        //Variables used to increment the question id and display a diffreent question type
+        //and text from the database every time the user press next
         private static int ButtonClicks = -1;
         private static int id = 1;
-        RadioButtonList radioBtn;
-
+        private static int questionID = -1;
+        
+        //Arrays that wills tore the question types, texts, and user answers
         string[] textArray;
         string[] typeArray;
         string[] answerTextArray;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session["user_email"] = email_txtbox.Text;
+            //Retrieve the email entered by tthe user in the first screen
+            Session["user_email"] = email_txtbox.Text;
 
-            if (!IsPostBack)
+            if (!IsPostBack)//If first time hide all the components
+            {                
+                text_box.Visible = false;
+                dropdown_list.Visible = false;
+                check_box_list.Visible = false;
+                radio_button_list.Visible = false;
+    
+            }
+            else//If it is post back, make the email field invisible
             {
-                //getFromDatabase();
+                email_txtbox.Visible = false;
+                RequiredFieldValidator_email.Visible = false;
                 
             }
-            else
-            {
-                //getFromDatabase();
-                
-            }
-
         }
 
         protected void next_btn2_Click(object sender, EventArgs e)
         {
-            //Session["RespondentSession"] = next_btn2.Text;
-            //Response.Redirect("Respondent/RespondentRegisterForm.aspx");
-
-            
             getFromDatabase();
-
-
-            /*string strControlType = ViewState["ControlType"].ToString();
-            if (strControlType.Equals("radio_button_id"))
-            {
-                RadioButtonList radioBtnList = (RadioButtonList)placeHolder.FindControl(strControlType);
-                foreach (ListItem item in radioBtnList.Items)
-                {
-                    if (item.Selected)
-                    {
-                        option_selected_lbl.Text = item.Text;
-                    }
-                }
-
-            }*/
-
         }
 
+        //Method that select different types, text of each question and all the possible answers and display
+        //them following the correspective types
         private void getFromDatabase()
         {
-            placeHolder.Controls.Clear();
-
+            
             SqlConnection myConn;
             myConn = new SqlConnection();
             myConn.ConnectionString = AppConstant.DevConnectionString;
@@ -95,23 +83,17 @@ namespace SurveyWebApp
             typeArray = new string[dataSetType.Tables[0].Rows.Count];
             answerTextArray = new string[dataSetAnswerText.Tables[0].Rows.Count];
 
+
             //Keep incrementing the id of the question and the counter for the questions every time Next is pressed
-            if (ButtonClicks < textArray.Length - 1)
+            if (ViewState["ButtonClicks"] != null)
             {
-                if (ViewState["ButtonClicks"] != null)
-                {
-                    ButtonClicks = (int)ViewState["ButtonClicks"];
-                    id = (int)ViewState["id"];
-                }
-                ButtonClicks++;
-                id++;
-                ViewState["ButtonClicks"] = ButtonClicks;
-                ViewState["id"] = id;
+                ButtonClicks = (int)ViewState["ButtonClicks"];
+                id = (int)ViewState["id"];
             }
-            else
-            {
-                Response.Redirect("Summary.aspx");
-            }
+            ButtonClicks++;
+            id++;
+            ViewState["ButtonClicks"] = ButtonClicks;
+            ViewState["id"] = id;
 
             //Loop to get question, type and answers from the datasets
             for (int counter = 0; counter < dataSetText.Tables[0].Rows.Count; counter++)
@@ -122,146 +104,163 @@ namespace SurveyWebApp
             for (int counter = 0; counter < dataSetType.Tables[0].Rows.Count; counter++)
             {
                 typeArray[counter] = dataSetType.Tables[0].Rows[counter]["type"].ToString();
-            }
+            } 
 
             for (int counter = 0; counter < dataSetAnswerText.Tables[0].Rows.Count; counter++)
             {
                 answerTextArray[counter] = dataSetAnswerText.Tables[0].Rows[counter]["text"].ToString();
             }
 
+            //Call method that store user answers
+            storeUserAnswers();
 
-            checkQuestionsTypeAndDisplayAnswers();
-
-        }
-        /*protected void Button1_Click(object sender, EventArgs e)
-        {
-            option_selected_lbl.Text = "Button clicked";
-
-            
-
-            *//*string strControlType = ViewState["ControlType"].ToString();
-            if (strControlType.Equals("radio_button_id"))
+            //Check if the question id reached the end of the array, if yes we go to the summary page
+            if (questionID == textArray.Length)
             {
-                RadioButtonList radioBtnList = (RadioButtonList)placeHolder.FindControl(strControlType);
-                foreach (ListItem item in radioBtnList.Items)
-                {
-                    if (item.Selected)
-                    {
-                        option_selected_lbl.Text = item.Text;
-                    }
-                }
-            }else if (strControlType.Equals("check_box_id"))
-            {
-                CheckBoxList checkBoxList = (CheckBoxList)placeHolder.FindControl(strControlType);
-                foreach (ListItem item in checkBoxList.Items)
-                {
-                    if (item.Selected)
-                    {
-                        option_selected_lbl.Text +=", " + item.Text;
-                    }
-                }
+                Response.Redirect("Summary.aspx");
             }
-            else if (strControlType.Equals("drop_list_id"))
-            {
-                DropDownList dropList = (DropDownList)placeHolder.FindControl(strControlType);
-                foreach (ListItem item in dropList.Items)
-                {
-                    if (item.Selected)
-                    {
-                        option_selected_lbl.Text += ", " + item.Text;
-                    }
-                }
-            }
-            else if (strControlType.Equals("text_box_id"))
-            {
-                TextBox textBox = (TextBox)placeHolder.FindControl(strControlType);
-                option_selected_lbl.Text = textBox.Text;
-            }*//*
-        }*/
-        private void checkQuestionsTypeAndDisplayAnswers()
-        {
-            //Check type of question and assign answers
-            if (typeArray[ButtonClicks].ToString() == "text_box")
+
+            //Clear all the fields in order to get a new input
+            text_box.Text = "";
+            dropdown_list.Items.Clear();
+            check_box_list.Items.Clear();
+            radio_button_list.Items.Clear();
+
+            //Check for every question what is the type, and show the correspective component
+            if (typeArray[ButtonClicks] == "text_box")
             {
                 question_label.Text = textArray[ButtonClicks].ToString();
-                TextBox textBox = new TextBox();
-                textBox.ID = "text_box_id";
-                placeHolder.Controls.Add(textBox);
-
-                RequiredFieldValidator req = new RequiredFieldValidator();
-                req.ID = "req_id";
-                req.SetFocusOnError = true;
-                req.ErrorMessage = "Required";
-                req.ForeColor = System.Drawing.Color.Crimson;
-                req.Font.Bold = true;
-                req.Display = ValidatorDisplay.Dynamic;
-                req.ControlToValidate = "text_box_id";
-                placeHolder.Controls.Add(req);
-
-                ViewState["ControlType"] = textBox.Text;
-
-                //option_selected_lbl.Text = "Textbox displayed";
-                option_selected_lbl.Text = textBox.Text;
+                dropdown_list.Visible = false;
+                check_box_list.Visible = false;
+                radio_button_list.Visible = false;
+                text_box.Visible = true;
 
             }
             else if (typeArray[ButtonClicks] == "drop_list")
             {
                 question_label.Text = textArray[ButtonClicks].ToString();
-                DropDownList dropList = new DropDownList();
-                for (int i = 0; i < answerTextArray.Length; i++)
+                dropdown_list.Items.Insert(0, new ListItem("Select", ""));
+                foreach (object item in answerTextArray)
                 {
-                    dropList.Items.Add(new ListItem(answerTextArray[i]));
+                    dropdown_list.Items.Add(new ListItem(item.ToString(), item.ToString()));
                 }
-                placeHolder.Controls.Add(dropList);
 
-                option_selected_lbl.Text = "Droplist displayed";
+                text_box.Visible = false;
+                check_box_list.Visible = false;
+                radio_button_list.Visible = false;
+                dropdown_list.Visible = true;
+ 
             }
             else if (typeArray[ButtonClicks] == "check_box")
             {
                 question_label.Text = textArray[ButtonClicks].ToString();
-                CheckBoxList checkBoxList = new CheckBoxList();
-                checkBoxList.ForeColor = System.Drawing.Color.White;
-                for (int i = 0; i < answerTextArray.Length; i++)
+                foreach (object item in answerTextArray)
                 {
-                    checkBoxList.Items.Add(new ListItem(answerTextArray[i]));
+                    check_box_list.Items.Add(new ListItem(item.ToString(), item.ToString()));
+                    
                 }
-                placeHolder.Controls.Add(checkBoxList);
-                option_selected_lbl.Text = "Checbox displayed";
+
+                text_box.Visible = false;
+                radio_button_list.Visible = false;
+                dropdown_list.Visible = false;
+                check_box_list.Visible = true;
             }
-            else if (typeArray[ButtonClicks].ToString() == "radio_btn")
+            else if (typeArray[ButtonClicks] == "radio_btn")
             {
-
                 question_label.Text = textArray[ButtonClicks].ToString();
-                /* RadioButtonList */
-                radioBtn = new RadioButtonList();
-                radioBtn.ForeColor = System.Drawing.Color.White;
-                for (int i = 0; i < answerTextArray.Length; i++)
+                foreach (object item in answerTextArray)
                 {
-                    radioBtn.Items.Add(new ListItem(answerTextArray[i], "RadioButton"));
+                    radio_button_list.Items.Add(new ListItem(item.ToString(), item.ToString()));
                 }
-                radioBtn.ID = "radio_button_id";
 
-                placeHolder.Controls.Add(radioBtn);
+                text_box.Visible = false;
+                dropdown_list.Visible = false;
+                check_box_list.Visible = false;
+                radio_button_list.Visible = true;
 
-                RequiredFieldValidator req = new RequiredFieldValidator();
-                req.ID = "req_id";
-                req.SetFocusOnError = true;
-                req.ForeColor = System.Drawing.Color.White;
-                req.Font.Bold = true;
-                req.ErrorMessage = "Required";
-                req.Display = ValidatorDisplay.Dynamic;
-                req.ControlToValidate = "radio_button_id";
-                placeHolder.Controls.Add(req);
-
-                ViewState["ControlType"] = radioBtn.ID;
-
-
-                //option_selected_lbl.Text = "Radio button displayed";
-                //option_selected_lbl.Text = radioBtn.SelectedValue.ToString();
-                //option_selected_lbl.Text = radioBtn.ID.ToString();
             }
+
+            myConn.Close();
+        }
+        
+        private void storeUserAnswers()
+        {
+            //Check if any component item is nulll
+            if (radio_button_list.SelectedItem == null && check_box_list.SelectedItem == null && dropdown_list.SelectedItem == null && text_box.Text == null)
+            {
+                
+            }
+            else//if not check if the id is less then 1(meaning the array is not in range yet)
+            {
+                if(questionID > -1)
+                {
+                    //check all the questions 1 by one, when found the right one store the user choice
+                    if (textArray[questionID] == "Select age range:")
+                    {
+                        Session["age"] = radio_button_list.SelectedItem.Text;
+                    }
+                    else if (textArray[questionID] == "Select gender:")
+                    {
+                        Session["gender"] = radio_button_list.SelectedItem.Text;
+                    }
+                    else if (textArray[questionID] == "News of interest:")
+                    {
+                        Session["news_interest"] = radio_button_list.SelectedItem.Text;
+                    }
+                    else if (textArray[questionID] == "Sport of interest:")
+                    {
+                        Session["sport_interest"] = radio_button_list.SelectedItem.Text;
+                    }
+                    else if (textArray[questionID] == "Destination:")
+                    {
+                        Session["travel"] = radio_button_list.SelectedItem.Text;
+                    }
+                    else if (textArray[questionID] == "Select fav color:")
+                    {
+                        Session["cl"] = radio_button_list.SelectedItem.Text;
+                    }
+
+                    else if (textArray[questionID] == "Select bank:")
+                    {
+                        Session["bank"] = check_box_list.SelectedItem.Text;
+                    }
+                    else if (textArray[questionID] == "Service used:")
+                    {
+                        Session["service"] = check_box_list.SelectedItem.Text;
+                    }
+                    else if (textArray[questionID] == "Favourite newspaper:")
+                    {
+                        Session["newspaper"] = check_box_list.SelectedItem.Text;
+                    }
+
+                    else if (textArray[questionID] == "Select state:")
+                    {
+                        Session["state"] = dropdown_list.SelectedItem.Text;
+                    }
+
+                    else if (textArray[questionID] == "Suburb:")
+                    {
+                        Session["suburb"] = text_box.Text;
+                    }
+                    else if (textArray[questionID] == "Post code:")
+                    {
+                        Session["postCode"] = text_box.Text;
+                    }
+                }
+            }
+            
+            questionID++;
+
+        }
+       
+        protected void Exit_btn_Click(object sender, EventArgs e)
+        {
+            //When this button is pressed, reset the initial statics variables and redirect the user to the home screen
+            ButtonClicks = -1;
+            id = 1;
+            questionID = -1;
+            Response.Redirect("/Home.aspx");
         }
 
-        
     }
 }

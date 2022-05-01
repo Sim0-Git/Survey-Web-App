@@ -1,4 +1,5 @@
-﻿body {
+﻿/*Master used form the header command thead footer color-profile thead different pages*/
+body {
     margin: 0;
     padding: 0;
     background-image: url(Images//login_background_2.jpg);
@@ -30,18 +31,6 @@
     font-weight: bold;
 }
 
-.Exit_btn {
-    margin-right: 50px;
-    width: 100px;
-    height: 28px;
-    background-color: rgb(255 202 100);
-    color: white;
-    border-radius: 4px;
-    border: none;
-    box-shadow: 1px 1px 4px #999;
-    font-size: 18px;
-    font-weight: bold;
-}
 .Title_1_lbl {
     display: flex;
     align-self: center;
@@ -49,14 +38,14 @@
     font-size: 22px;
     font-weight: bold;
     color: rgb(95 95 105);
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 50vh;
+    height: 75vh;
 }
 .question_container {
     display: flex;
@@ -64,7 +53,7 @@
     align-items: center;
     background: rgb(0 0 0 / 0.8);
     width: 550px;
-    min-height: 120px;
+    min-height: 165px;
     padding: 20px 10px 20px 10px;
     border-radius: 6px;
     padding: 10px;
@@ -74,9 +63,22 @@
     font-size: 20px;
     margin-right:10px;
 }
-.btn_container{
-    display:flex;
-    justify-content:center;
+.text_box{
+    width:180px;
+}
+.check_box_list{
+    color:white;
+}
+.dropdown_list {
+    width:180px;
+    font-size:15px;
+}
+.radio_button_list {
+    color: white;
+}
+.btn_container {
+    display: flex;
+    justify-content: center;
 }
 .next_btn2 {
     background-color: rgb(59 157 255);
@@ -88,6 +90,17 @@
     color: white;
     width: 300px;
     height: 30px;
+}
+.Exit_btn {
+    width: 300px;
+    height: 30px;
+    background-color: rgb(255 202 100);
+    color: white;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 1px 1px 4px #999;
+    font-size: 18px;
+    font-weight: bold;
 }
 .footer_container {
     display: flex;
@@ -114,4 +127,78 @@
     min-width: 230px;
 }
 
-/*---------------*/
+/*--------SUMMARY ASPX-------*/
+
+.summary {
+    display: flex;
+    justify-content: center;
+}
+.summary_questions {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+.summary_answers {
+    display: flex;
+    flex-direction: column;
+    margin-left:10px;
+}
+.question_lbl {
+    color: rgb(59 157 255);
+    font-size: 15px;
+    align-self:flex-end;
+    margin-bottom:1.5px;
+}
+.answer_lbl {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 1.5px;
+}
+/*--------Final screen ASPX-------*/
+
+.login_box {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 340px;
+    height: 350px;
+    padding: 60px 30px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.close_btn {
+    background-color: rgb(0 201 253);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 85%;
+    height: 35px;
+    margin-top: 80px;
+    font-size: 20px;
+    font-family: Ebrima;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+    align-self:center;
+}
+.close_btn:hover {
+    background-color: rgb(249 190 90);
+    color: white;
+}
+
+.thank_lbl {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(239 178 26);
+    text-align: center;
+    margin-top:40px;
+    line-height:35px;
+
+}

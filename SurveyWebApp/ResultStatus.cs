@@ -7,6 +7,7 @@ namespace SurveyWebApp
 {
     public class ResultStatus
     {
+        //Class used to display messages when a user register as member
         private int resultStatuscode;
         private string message;
 

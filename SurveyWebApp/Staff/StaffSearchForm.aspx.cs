@@ -38,68 +38,66 @@ namespace SurveyWebApp
             string travel = travel_list.SelectedItem.Text;
             string sport = sport_list.SelectedItem.Text;
 
-            //Result_lbl.Text = gender;
-
+           //Sql command that select all the values from the database corresponding to each of the field
             SqlCommand selectAll = new SqlCommand("select * from User_Registration where name='" + firstName + "' or surname='" + secondName + "' or state='" + state + "' or gender='" + gender + "' or age_range='" + age + "' or suburb='" + suburb + "' or post_code='" + post_code + "' or bank='" + bank + "' or bank_service='" + service + "' or newspaper='" + newspaper + "' or news_interest='" + interest + "' or travel_destination='" + travel + "' or sport=' " + sport + "' or email='" + email + "'", myConn);
 
             SqlDataReader allUserReader = selectAll.ExecuteReader();
-
+            //Creeate a table
             DataTable users = new DataTable();
-            users.Columns.Add("user_reg_id", System.Type.GetType("System.String"));
-            users.Columns.Add("name", System.Type.GetType("System.String"));
-            users.Columns.Add("surname", System.Type.GetType("System.String"));
-            users.Columns.Add("phone", System.Type.GetType("System.String"));
-            users.Columns.Add("dob", System.Type.GetType("System.String"));
-            users.Columns.Add("email", System.Type.GetType("System.String"));
-            users.Columns.Add("age_range", System.Type.GetType("System.String"));
-            users.Columns.Add("gender", System.Type.GetType("System.String"));
-            users.Columns.Add("state", System.Type.GetType("System.String"));
-            users.Columns.Add("suburb", System.Type.GetType("System.String"));
-            users.Columns.Add("post_code", System.Type.GetType("System.String"));
-            users.Columns.Add("bank", System.Type.GetType("System.String"));
-            users.Columns.Add("bank_service", System.Type.GetType("System.String"));
-            users.Columns.Add("newspaper", System.Type.GetType("System.String"));
-            users.Columns.Add("news_interest", System.Type.GetType("System.String"));
-            users.Columns.Add("travel_destination", System.Type.GetType("System.String"));
-            users.Columns.Add("sport", System.Type.GetType("System.String"));
+            users.Columns.Add("ID", System.Type.GetType("System.String"));
+            users.Columns.Add("Name", System.Type.GetType("System.String"));
+            users.Columns.Add("Surname", System.Type.GetType("System.String"));
+            users.Columns.Add("Phone", System.Type.GetType("System.String"));
+            users.Columns.Add("DOB", System.Type.GetType("System.String"));
+            users.Columns.Add("Email", System.Type.GetType("System.String"));
+            users.Columns.Add("Age range", System.Type.GetType("System.String"));
+            users.Columns.Add("Gender", System.Type.GetType("System.String"));
+            users.Columns.Add("State", System.Type.GetType("System.String"));
+            users.Columns.Add("Suburb", System.Type.GetType("System.String"));
+            users.Columns.Add("Post code", System.Type.GetType("System.String"));
+            users.Columns.Add("Bank", System.Type.GetType("System.String"));
+            users.Columns.Add("Service", System.Type.GetType("System.String"));
+            users.Columns.Add("Newspaper", System.Type.GetType("System.String"));
+            users.Columns.Add("Interests", System.Type.GetType("System.String"));
+            users.Columns.Add("Travel", System.Type.GetType("System.String"));
+            users.Columns.Add("Sport", System.Type.GetType("System.String"));
 
+            //Loop every row present in the databse
             DataRow usersRow;
             while (allUserReader.Read())
             {
                 //Display rows based on the database schema
                 usersRow = users.NewRow();
 
-                usersRow["user_reg_id"] = allUserReader["user_reg_id"].ToString();
-                usersRow["name"] = allUserReader["name"].ToString();
-                usersRow["surname"] = allUserReader["surname"].ToString();
-                usersRow["phone"] = allUserReader["phone"].ToString();
-                usersRow["dob"] = allUserReader["dob"].ToString();
-                usersRow["email"] = allUserReader["email"].ToString();
-                usersRow["age_range"] = allUserReader["age_range"].ToString();
-                usersRow["gender"] = allUserReader["gender"].ToString();
-                usersRow["state"] = allUserReader["state"].ToString();
-                usersRow["suburb"] = allUserReader["suburb"].ToString();
-                usersRow["post_code"] = allUserReader["post_code"].ToString();
-                usersRow["bank"] = allUserReader["bank"].ToString();
-                usersRow["bank_service"] = allUserReader["bank_service"].ToString();
-                usersRow["newspaper"] = allUserReader["newspaper"].ToString();
-                usersRow["news_interest"] = allUserReader["news_interest"].ToString();
-                usersRow["travel_destination"] = allUserReader["travel_destination"].ToString();
-                usersRow["sport"] = allUserReader["sport"].ToString();
+                usersRow["ID"] = allUserReader["user_reg_id"].ToString();
+                usersRow["Name"] = allUserReader["name"].ToString();
+                usersRow["Surname"] = allUserReader["surname"].ToString();
+                usersRow["Phone"] = allUserReader["phone"].ToString();
+                usersRow["DOB"] = allUserReader["dob"].ToString();
+                usersRow["Email"] = allUserReader["email"].ToString();
+                usersRow["Age range"] = allUserReader["age_range"].ToString();
+                usersRow["Gender"] = allUserReader["gender"].ToString();
+                usersRow["State"] = allUserReader["state"].ToString();
+                usersRow["Suburb"] = allUserReader["suburb"].ToString();
+                usersRow["Post code"] = allUserReader["post_code"].ToString();
+                usersRow["Bank"] = allUserReader["bank"].ToString();
+                usersRow["Service"] = allUserReader["bank_service"].ToString();
+                usersRow["Newspaper"] = allUserReader["newspaper"].ToString();
+                usersRow["Interests"] = allUserReader["news_interest"].ToString();
+                usersRow["Travel"] = allUserReader["travel_destination"].ToString();
+                usersRow["Sport"] = allUserReader["sport"].ToString();
 
                 users.Rows.Add(usersRow);
-
+                //pass the data to the table and display the results
                 staff_search_grid.DataSource = users;
                 staff_search_grid.DataBind(); //Present the data in the table
-
-                //myConn.Close();//Close connection with database
             }
 
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            
+            //reset all the fields
             first_name_txt.Text = string.Empty;
             second_name_txt.Text = string.Empty;
             gender_list.SelectedIndex = -1;
@@ -118,6 +116,7 @@ namespace SurveyWebApp
             
         }
 
+        //Methods used for single reset of certain fields present in the research page
         protected void Button3_Click(object sender, EventArgs e)
         {
             first_name_txt.Text = "";

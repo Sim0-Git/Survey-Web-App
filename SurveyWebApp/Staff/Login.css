@@ -2,9 +2,9 @@
     margin: 0;
     padding: 0px;
     background-size: cover;
-    background-image: url(Images//login_background_2.jpg);
+    background-image: url(/Images/login_background_2.jpg);
     font-family: Ebrima;
-    background-color: hsla(0,0%,100%,0.20);
+    background-color: hsla(0,0%,100%,0.50);
     background-blend-mode:overlay;
     background-repeat:no-repeat;
     z-index: 1;
@@ -12,25 +12,26 @@
 
 .login_box {
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 350px;
-    height: 440px;
+    width: 380px;
+    height: 520px;
     padding: 80px 40px;
     box-sizing: border-box;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.75);
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    justify-content:center;
 }
 
 .login_icon{
-    max-width:100px;
-    height:100px;
+    max-width:80px;
+    height:80px;
     overflow:hidden;
-    top:calc(-100px/2);
-    left:calc(50% - 50px);
+    top:calc(-90px/2);
+    left:calc(50% - 40px);
     position:absolute;
 }
 
@@ -39,7 +40,7 @@
     font-weight:bold;
     color:rgb(255,217,9);
     align-self:center;
-    margin-bottom:40px;
+    margin-bottom:20px;
     display:inline-block;
 }
 
@@ -48,14 +49,13 @@
     margin-bottom:5px;
     display:inline-block;
     font-size:15px;
-    font-weight:bold;
 }
 
 .text_box {
     width: 100%;
     height: 25px;
     border: none;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     border-bottom: 2px solid #fff;
     outline: none;
     background-color: transparent;
@@ -81,9 +81,34 @@
     font-weight:bold;
     color: white;
     cursor: pointer;
-    transition: .2s ease-in-out;
+    transition: .1s ease-in-out;
 }
 
 .login_btn:hover {
     background-color: rgb(249 190 90);
+}
+.goBack_btn {
+    background-color: white;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 35px;
+    margin-top: 30px;
+    margin-bottom:20px;
+    font-size: 18px;
+    font-family: Ebrima;
+    font-weight: bold;
+    color: rgb(0 201 253);
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+.goBack_btn:hover {
+    background-color: rgb(249 190 90);
+    color:white;
+}
+.reuslt_lbl {
+    color: #FF0066;
+    font-size:16px;
+    margin-left:35px;
 }

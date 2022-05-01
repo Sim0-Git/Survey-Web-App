@@ -6,6 +6,7 @@
 <head runat="server">
     <title></title>
     <link href="StaffSearchForm.css" rel="stylesheet" />
+    <link href="Master2.css" rel="stylesheet" />
     <link href="Master1.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -18,7 +19,7 @@
                 <asp:Label ID="Logo_lbl" runat="server" Text="Market Survey" CssClass="Logo_lbl" />
             </div>
             <div>
-                <asp:Button ID="Exit_btn" runat="server" Text="Exit  >" CssClass="Exit_btn" OnClick="Exit_btn_Click" CausesValidation="False" />
+                <asp:Button ID="Exit_btn" runat="server" Text="Exit  >" CssClass="exit_search" OnClick="Exit_btn_Click" CausesValidation="False" />
             </div>
         </div>
         <div class="main_container">

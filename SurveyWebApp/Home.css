@@ -1,13 +1,15 @@
-﻿.container {
+﻿
+.containerHome {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     background: rgb(0 0 0 / 0.8);
-    /*width: 600px;*/
-    padding: 10px;
+    height: 55vh;
     border-radius: 6px;
-    margin:50px 300px 50px 300px;
-    padding:10px;
+    margin: 50px 300px 50px 300px;
+    padding: 20px 30px;
+    align-self: center;
 }
 .label1 {
     font-size: 28px;
@@ -24,6 +26,18 @@
     font-size: 18px;
     color: rgb(59 157 255);
     font-weight: bold;
+}
+.login_btn {
+    width: 130px;
+    height: 30px;
+    background-color: rgb(255 202 100);
+    color: white;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 1px 1px 4px #999;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right:20px;
 }
 .start_btn {
     background-color: rgb(59 157 255);

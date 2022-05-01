@@ -16,20 +16,11 @@
                 <asp:Image ID="LogoImage" runat="server" ImageUrl="~/Images/rocket_login.png" CssClass="LogoImage" />
                 <asp:Label ID="Logo_lbl" runat="server" Text="Market Survey" CssClass="Logo_lbl" />
             </div>
-            <div>
-                <asp:Button ID="Exit_btn" runat="server" Text="Exit  >" CssClass="Exit_btn" OnClick="Exit_btn_Click" CausesValidation="False" />
-            </div>
-        </div>
-        <div style="display: flex; justify-content: center;">
-            <asp:Label ID="Title_1_lbl" runat="server" Text="Please answer the questions<br/>and click &quot;next&quot; in order to<br/>complete the survey" CssClass="Title_1_lbl"></asp:Label>
         </div>
         <div class="main_container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <%--<div class="btn_container">
-            <asp:Button ID="next_btn2" Text="Next  >" runat="server" CssClass="next_btn2" OnClick="next_btn2_Click" />
-        </div> --%>
     </form>
     <div class="footer_container">
         <asp:Label ID="copyright_lbl" runat="server" Text="Copyright @Market Survey 2022" CssClass="copyright_lbl"></asp:Label>

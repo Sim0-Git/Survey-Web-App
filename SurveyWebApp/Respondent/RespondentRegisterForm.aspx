@@ -18,7 +18,7 @@
             <div class="left_container">
                 <asp:Label ID="Label1" runat="server" Text="Thanks for completing the survey" CssClass="Label1"></asp:Label>
                 <asp:Label ID="Label2" runat="server" Text="Would you like to subscribe</br> and become member</br> of the program?" CssClass="Label2"></asp:Label>
-                <asp:Button ID="skip_btn" runat="server" Text="Skip" CssClass="btn_skip" />
+                <asp:Button ID="skip_btn" runat="server" Text="Skip" CssClass="btn_skip" OnClick="skip_btn_Click" CausesValidation="false"/>
             </div>
             <div class="right_container">
                 <asp:Image ID="user_img" runat="server" ImageUrl="~/Images/rocket_login.png" CssClass="user_img" />
@@ -45,7 +45,7 @@
                     <asp:Calendar ID="calendar" runat="server" BackColor="#3399FF" BorderStyle="None" Font-Size="10pt" ForeColor="White" OnSelectionChanged="calendar_SelectionChanged" Visible="False"></asp:Calendar>
                 </div>
                 <asp:Button ID="submit_btn" runat="server" Text="Submit" CssClass="btn_submit" OnClick="submit_btn_Click" />
-                <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
+                <asp:Label ID="server_check" runat="server" Text=""></asp:Label>
             </div>
         </div>
     </form>

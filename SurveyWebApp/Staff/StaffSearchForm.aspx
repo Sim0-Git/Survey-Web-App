@@ -156,11 +156,11 @@
                 <asp:Button ID="Button1" runat="server" Text="Search" CssClass="search_button" OnClick="Button1_Click" />
                 <asp:Button ID="Button2" runat="server" Text="Reset all" CssClass="delete_button" OnClick="Button2_Click" />
             </div>
-            <asp:Label ID="Result_lbl" runat="server" Text="Label"></asp:Label>
+            <%-- <asp:Label ID="Result_lbl" runat="server" Text="Label"></asp:Label> --%>
             <hr class="line" />
             <div class="results_container">
                 <asp:Label ID="Label2" runat="server" Text="Results:" CssClass="Label1"></asp:Label>
-                <asp:GridView ID="staff_search_grid" runat="server"></asp:GridView>
+                <asp:GridView ID="staff_search_grid" runat="server" CssClass="staff_search_grid" HeaderStyle-CssClass="grid_header" RowStyle-CssClass="grid_row"></asp:GridView>
             </div>
         </div>
     

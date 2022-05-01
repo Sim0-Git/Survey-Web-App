@@ -15,6 +15,15 @@ namespace SurveyWebApp
     {
 
         /// <summary>
+        /// Title_1_lbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Title_1_lbl;
+
+        /// <summary>
         /// question_label control.
         /// </summary>
         /// <remarks>
@@ -24,22 +33,58 @@ namespace SurveyWebApp
         protected global::System.Web.UI.WebControls.Label question_label;
 
         /// <summary>
-        /// placeHolder control.
+        /// email_txtbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder placeHolder;
+        protected global::System.Web.UI.WebControls.TextBox email_txtbox;
 
         /// <summary>
-        /// option_selected_lbl control.
+        /// RequiredFieldValidator_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label option_selected_lbl;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_email;
+
+        /// <summary>
+        /// text_box control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox text_box;
+
+        /// <summary>
+        /// check_box_list control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList check_box_list;
+
+        /// <summary>
+        /// dropdown_list control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropdown_list;
+
+        /// <summary>
+        /// radio_button_list control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList radio_button_list;
 
         /// <summary>
         /// next_btn2 control.
@@ -49,5 +94,14 @@ namespace SurveyWebApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button next_btn2;
+
+        /// <summary>
+        /// Exit_btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Exit_btn;
     }
 }
